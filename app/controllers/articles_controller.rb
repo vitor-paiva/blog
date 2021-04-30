@@ -35,4 +35,12 @@ class ArticlesController < ApplicationController
     end
   end
 
+  def destroy
+    if @article = Article.find(params[:id])
+      @article.delete
+    end
+
+    redirect_to articles_path
+  end
+
 end
